@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Обучающее приложение для остеопатов">
+    <meta name="theme-color" content="#2c3e50">
+    <title>Остеопат Обучение</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Заголовок -->
+        <header class="app-header">
+            <h1>Остеопат Обучение</h1>
+            <button id="installBtn" class="install-btn" style="display: none;">Установить</button>
+        </header>
+
+        <!-- Навигация -->
+        <nav class="main-nav">
+            <button class="nav-btn active" data-section="home">
+                <span class="nav-icon">🏠</span>
+                <span class="nav-text">Главная</span>
+            </button>
+            <button class="nav-btn" data-section="anatomy">
+                <span class="nav-icon">🦴</span>
+                <span class="nav-text">Анатомия</span>
+            </button>
+            <button class="nav-btn" data-section="techniques">
+                <span class="nav-icon">✋</span>
+                <span class="nav-text">Техники</span>
+            </button>
+            <button class="nav-btn" data-section="cases">
+                <span class="nav-icon">📋</span>
+                <span class="nav-text">Клинические случаи</span>
+            </button>
+            <button class="nav-btn" data-section="quizzes">
+                <span class="nav-icon">📝</span>
+                <span class="nav-text">Тесты</span>
+            </button>
+        </nav>
+
+        <!-- Основной контент -->
+        <main class="main-content" id="mainContent">
+            <!-- Домашняя страница -->
+            <section id="home" class="content-section active">
+                <div class="welcome-screen">
+                    <h2>Добро пожаловать!</h2>
+                    <p>Это учебное приложение для остеопатов. Выберите раздел в меню для начала обучения.</p>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number" id="anatomyCompleted">0</div>
+                            <div class="stat-label">Анатомия пройдено</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" id="techniquesCompleted">0</div>
+                            <div class="stat-label">Техники изучено</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" id="casesCompleted">0</div>
+                            <div class="stat-label">Кейсы изучено</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" id="quizzesCompleted">0</div>
+                            <div class="stat-label">Тесты пройдено</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Анатомия -->
+            <section id="anatomy" class="content-section">
+                <div class="section-header">
+                    <h2>Анатомия</h2>
+                    <button class="back-btn" id="anatomyBack" style="display: none;">← Назад к списку</button>
+                </div>
+                <div id="anatomyList" class="items-list"></div>
+                <div id="anatomyDetail" class="item-detail" style="display: none;"></div>
+            </section>
+
+            <!-- Техники -->
+            <section id="techniques" class="content-section">
+                <div class="section-header">
+                    <h2>Техники</h2>
+                    <button class="back-btn" id="techniquesBack" style="display: none;">← Назад к списку</button>
+                </div>
+                <div id="techniquesList" class="items-list"></div>
+                <div id="techniquesDetail" class="item-detail" style="display: none;"></div>
+            </section>
+
+            <!-- Клинические случаи -->
+            <section id="cases" class="content-section">
+                <div class="section-header">
+                    <h2>Клинические случаи</h2>
+                    <button class="back-btn" id="casesBack" style="display: none;">← Назад к списку</button>
+                </div>
+                <div id="casesList" class="items-list"></div>
+                <div id="casesDetail" class="item-detail" style="display: none;"></div>
+            </section>
+
+            <!-- Тесты -->
+            <section id="quizzes" class="content-section">
+                <div class="section-header">
+                    <h2>Тесты</h2>
+                    <button class="back-btn" id="quizzesBack" style="display: none;">← Назад к списку</button>
+                </div>
+                <div id="quizzesList" class="items-list"></div>
+                <div id="quizDetail" class="item-detail" style="display: none;"></div>
+            </section>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
